@@ -71,6 +71,7 @@
 	</nav>
 </header>
 <h1>Mojada</h1>
+<p>I'm the architec of my own destruction</p>
   <div class="container">
     
   </div>
