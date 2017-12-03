@@ -51,7 +51,7 @@
       </div>
       <button type="submit" class="btn btn-default">Enviar</button>
     </form>
- 
+   <p>Mi unico enemigo es el tiempo</p>
     <ul class="nav navbar-nav navbar-right">
       <li><a href="#">Enlace #3</a></li>
       <li class="dropdown">
