@@ -1,0 +1,17 @@
+
+.navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+}
+
+.navbar {
+	margin-bottom: 0;
+}
+  .jumbotron-km { 
+	 background: #428BCA;
+     background-image:  url("../imagenes/security-guar.jpg");
+     color: green;
+     height: 150px;
+}
+
