@@ -18,6 +18,7 @@
 
 	
 	<nav class="navbar navbar-default" role="navigation">
+	
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="icon-bar"></span>
@@ -26,7 +27,9 @@
         </button>
     </div>
     <div class="navbar-collapse collapse">
-        
+        <ul class="nav navbar-nav navbar-left">
+        <li><h3 class="titulo"><a href="#" class="titulo">Safe Daycare </a></h3></li>
+        </ul>
         <ul class="nav navbar-nav navbar-center">
             <li><a href="#">Inicio</a></li>
   
@@ -71,6 +74,49 @@
 </section>
 </div>
 
+<section class="main container">
+<div class="row">
+   	<section class="posts col-md-12" >
+   		<div class="contenido">
+   			<ol class="breadcrumb">
+   				<li><a href="#">Inicio</a></li>
+   				<li><a href="#">Categoria</a></li>
+   				<li class="active">Diseño web</li>
+   				
+   			</ol>
+   		</div>
+   </section>
+   </div>
+   <div class="row">
+   	<section class="posts col-md-9" >
+   		
+   		<article class="post clearfix">
+   			<a href="#" class="thumb pull-left">
+   				<img src="imagenes/img-guar.jpg" alt="">
+   			</a>
+   			<h2 class="post-title">
+   				<a href="#">Nuevas Guarderías </a>
+   			</h2>
+   		
+   			
+   			
+   		</article>
+
+   	</section>
+   		<section class="posts col-md-3" >
+   		<article class="post clearfix comentarios">
+   		<a href="#" class="thumb pull-left">
+   				
+   			</a>
+   			<h2 class="post-title">
+   				<a href="#">Comentarios de nuestros usuarios</a>
+   			</h2>
+   			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec volutpat sodales dui eget molestie. Etiam luctus, velit vitae sodales tincidunt, enim ex mollis nulla, in porttitor justo sem ut metus. Morbi molestie sit amet nulla ut hendrerit. Sed at laoreet purus. Donec sed nisi ut felis ullamcorper vehicula sed vulputate turpis. Mauris quis tempus enim. Curabitur id tellus ac nisl porta tincidunt id et erat. Pellentesque nisl sem, egestas sed mauris in, consectetur dapibus metus. Nulla facilisi.</p>
+   		
+   			</article>
+   		</section>
+   </div>
+ </section>
  
   <script src="https://code.jquery.com/jquery-latest.js"></script>
 <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->

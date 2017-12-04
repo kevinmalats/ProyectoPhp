@@ -26,7 +26,9 @@
         </button>
     </div>
     <div class="navbar-collapse collapse">
-        
+         <ul class="nav navbar-nav navbar-left">
+        <li><h3 class="titulo"><a href="../index.php" class="titulo">Safe Daycare </a></h3></li>
+        </ul>
         <ul class="nav navbar-nav navbar-center">
             <li><a href="../index.php">Inicio</a></li>
   

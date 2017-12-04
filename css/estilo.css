@@ -1,4 +1,12 @@
-
+@font-face
+{
+   font-family: "Daycare";
+   src: url("letras/share_happiness_around/ShareHappinessAround.otf");
+   src: url("fuentefancy.eot?#amocristalab") format("embedded-opentype"),
+        url("fuentefancy.woff") format("woff"),
+        url("fuentefancy.ttf") format("truetype"),
+        url("fuentefancy.svg#IDdelafuente") format("svg");
+}
 .navbar-nav.navbar-center {
     position: absolute;
     left: 50%;
@@ -15,3 +23,34 @@
      height: 150px;
 }
 
+.navbar-collapse .nav .titulo {
+	font-size: 25px;
+	color: green;
+	font-family: "Daycare";
+	text-decoration: none;
+}
+/* Post */
+
+.thumb img {
+	height: 20%;
+	width: 50%;
+	
+}
+.main {
+	margin-bottom: 20px;
+	margin-top: 20px;
+
+}
+.post {
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #999;
+
+}
+.comentarios {
+	border-left: 1px solid #999;
+}
+.post .thumb {
+  margin-right: 10px;
+  width: 100%;
+}
