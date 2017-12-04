@@ -105,7 +105,7 @@
    	</section>
    		<section class="posts col-md-3" >
    		<article class="post clearfix comentarios">
-   		<a href="#" class="thumb pull-left">
+   		<a href="#" class="thumb ">
    				
    			</a>
    			<h2 class="post-title">

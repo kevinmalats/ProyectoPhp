@@ -36,6 +36,9 @@
 	width: 50%;
 	
 }
+.post-title a {
+	text-decoration: none;
+}
 .main {
 	margin-bottom: 20px;
 	margin-top: 20px;
