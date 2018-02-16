@@ -10,12 +10,12 @@ background:#e06d5e;
 }
 
 ul#menu-main > li > a:hover {
-	color: #1BAC91;
+	color: black;
 }
 
 
 ul#menu-main > li > a:focus,ul#menu-main > li > a:active, ul#menu-main > li > a.selected, ul#menu-main li a.selected:active    {
-	color: #1BAC91;
+	color: black;
 }
 #header-wrapper h1 span {
 	color:#1BAC91;

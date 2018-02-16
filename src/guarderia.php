@@ -1,24 +1,28 @@
 <?php
-/**
-* 
-*/
-class Usuario {
+/*if ($_SESSION){     
+        if ($_SESSION["perfil"]=="admin"){                
+        }else{
+            header("location:../index.php"); 
+        }                            
+    }else{
+        header("location:../index.php");
+    }*/
+class Guarderia {
 
-private $id_usuario;
+private $id_guarderia;
 private $nombre ;
-private $password;
-private $perfil;
+private $ciudad_id_ciudad;    
 
 
 public function __construct(){
    
 
 }
-public function setId($id_usuario){
-     $this->id_usuario=$id_usuario;
+public function setId($id_guarderia){
+     $this->id_guarderia=$id_guarderia;
 }
 public function getId(){
-	return $this-->id_usuario;
+	return $this->id_guarderia;
 }
 public function setNombre($var){
      $this->nombre=$var;
@@ -26,19 +30,12 @@ public function setNombre($var){
 public function getNombre(){
 	return $this->nombre;
 }
-public function setPassword($var){
-     $this->password=$var;
+public function setCiudadIdCiudad($var){
+     $this->ciudad_id_ciudad=$var;
 }
-public function getPassword(){
-	return $this->password;
+public function getCiudadIdCiudad(){
+	return $this->ciudad_id_ciudad;
 }
-public function setPerfil($var){
-     $this->perfil=$var;
+    
 }
-public function getPerfil(){
-	return $this->perfil;
-}
-
-}
-
 ?>

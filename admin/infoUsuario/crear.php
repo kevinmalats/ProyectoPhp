@@ -13,7 +13,11 @@ if ( $_SESSION["perfil"]!= "admin"){
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!--Links para la subida de archivos -->
+
 <link href="../assets/css/miestilo.css" rel="stylesheet" >
+
 </head>
 <body>
 
@@ -38,7 +42,7 @@ if ( $_SESSION["perfil"]!= "admin"){
     echo "<div class='container-fluid'>";
     echo "<div class='navbar-header'><a class='navbar-brand' >Tabla Usuario</a></div>";
     echo " <ul class='nav navbar-nav'>";
-                echo "<li><a href='index.php'>Menú</a></li>";
+                echo "<li><a href='index.php'>Atrás</a></li>";
 
             echo "<li><a href='#>Nuevo</a></li>";
             echo "<li><a href='#' disable>Nuevo</a></li>";
@@ -53,7 +57,7 @@ if ( $_SESSION["perfil"]!= "admin"){
 
 ?>
 
-<form method= "POST" class="form-horizontal" action= "guardar.php" >
+<form method= "POST" class="form-horizontal" action= "guardar.php" enctype="multipart/form-data">
    
      <div class="form-group">
          <label for="inputName" class="control-label col-xs-2">Nombres:</label>
@@ -79,8 +83,9 @@ if ( $_SESSION["perfil"]!= "admin"){
 <div class='form-group'>
 <label for='inputName' class='control-label col-xs-2'>Foto Perfil:</label>
       <div class="col-xs-10">
-             <input name = "fotoperfil" type="text" id= "fotoperfil" class="form-control misopciones"
- placeholder="Fotoperfil"  required/>
+       <input type="file" name="archivo" class="mifile">
+             <!--<input name = "fotoperfil" type="text" id= "fotoperfil" class="form-control misopciones"
+ placeholder="Fotoperfil"  required/> -->
 </div>
 </div>
 <div class='form-group'>

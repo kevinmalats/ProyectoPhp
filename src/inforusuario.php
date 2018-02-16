@@ -1,7 +1,5 @@
 <?php
-/**
-* 
-*/
+
 class Informacion_usuario {
 
 private $id_usuario;

@@ -285,7 +285,7 @@ h2.pagetitle {
 }
 .navbar .brand a {
 	padding: 0;
-	color: #fff;
+	color: #62c462;
 	font-size: 1.75em;
 	margin-left: 0;
 	font-weight: 400;
@@ -313,9 +313,12 @@ h2.pagetitle {
 #menu-main {
 	margin-top: 1.125em;
 }
+#menu-second {
+	margin-top: 1.125em;
+}
 ul#menu-main > li > a {
 	font-weight: 600;
-	color: #fff;
+	color: #62c462;;
 	font-size:14px;
 	text-transform:uppercase;
 }
@@ -329,10 +332,37 @@ ul#menu-main > li > a:focus {
 	outline:0;
 }
 
+
+
+
+
+
+
+
+
+
+#menu-second {
+	margin-top: 1.125em;
+}
 .navbar-inverse .brand, .navbar-inverse .nav > li > a {
 	text-shadow: none;
 }
 
+ul#menu-second > li > a {
+	font-weight: 600;
+	color: #62c462;;
+	font-size:14px;
+	text-transform:uppercase;
+}
+ul#menu-second > li > a:hover {
+	padding: 9px 15px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+}
+ul#menu-second > li > a:focus {
+	outline:0;
+}
 
 /* =========================================================
 05. Page sections
@@ -476,7 +506,7 @@ section.spacer {
 }
 
 .spacer.green,.section.green {
-	background:#D0F5A9;
+	background:#f5f5f5;
 }
 
 .spacer.green,.section.green h4 {
@@ -1718,4 +1748,28 @@ i.icon-white {
     margin-left: 9px;
     color: red;
     
+}
+   .imagenPerfil {
+    
+    width: 15%;
+    /* los siguientes valores son independientes del tamaño del círculo */
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    background-size: 100% auto;
+    }
+    .midrop {
+    	display: inline-block;
+    	width: 130px;
+    	background-color: white;
+
+    }
+    .mistyle {
+    	background-color: white;
+    	color: green;
+    }
+.mib:hover {
+	color: green;
+	border-top-color: #62c462;
+	border-bottom-color: #62c462;
 }

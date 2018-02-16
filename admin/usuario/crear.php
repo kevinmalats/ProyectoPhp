@@ -38,7 +38,7 @@ if ( $_SESSION["perfil"]!= "admin"){
     echo "<div class='container-fluid'>";
     echo "<div class='navbar-header'><a class='navbar-brand' >Tabla Usuario</a></div>";
     echo " <ul class='nav navbar-nav'>";
-                echo "<li><a href='index.php'>Menú</a></li>";
+                echo "<li><a href='index.php'>Atrás</a></li>";
             echo "<li><a href='#'>Nuevo</a></li>";
         echo "</ul>";
     echo " <ul class='nav navbar-nav navbar-right'>";
@@ -76,7 +76,21 @@ if ( $_SESSION["perfil"]!= "admin"){
          
       </select>
 </div>
-     
+    <div class="col-xs-10">
+        <select name="ciudad" required  class="form-control miselect">
+  
+      <?php
+      
+      require_once("../../src/collectorCiudad.php");
+      $obUsua= new CiudadCollector();
+      foreach ($obUsua->showCiudades() as $usuario) {
+        
+       echo  "<option value='".$usuario->getId()."'>".$usuario->getNombre()." </option>";
+      
+      }
+      ?>
+        </select>
+</div> 
 
      <div class="form-group">
     
@@ -92,10 +106,11 @@ if ( $_SESSION["perfil"]!= "admin"){
 <?php
 if(isset($_GET["mensaje"])){
     ?>
-    <div class="col-md-5 text-center"><p <?php echo "class='$color'"?>><?php echo $_GET["mensaje"];?></p></div>
+    <div class="col-md-5 text-center"><p <?php echo "class=alert alert-success"?>><?php echo $_GET["mensaje"];?></p></div>
         
     <?php
 }
 ?>
+    </aside>
 </body>
 </html>

@@ -1,14 +1,19 @@
 <?php
-/**
-* 
-*/
+/*if ($_SESSION){     
+        if ($_SESSION["perfil"]=="admin"){                
+        }else{
+            header("location:../index.php"); 
+        }                            
+    }else{
+        header("location:../index.php");
+    }*/
 class Usuario {
 
 private $id_usuario;
 private $nombre ;
 private $password;
 private $perfil;
-
+private $ciudad_id_ciudad;
 
 public function __construct(){
    
@@ -38,6 +43,13 @@ public function setPerfil($var){
 public function getPerfil(){
 	return $this->perfil;
 }
+public function setCiudad($var){
+     $this->ciudad_id_ciudad=$var;
+}
+public function getCiudad(){
+    return $this->ciudad_id_ciudad;
+}
+
 
 }
 

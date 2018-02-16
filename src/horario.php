@@ -1,43 +1,35 @@
 <?php
-/**
-* 
-*/
-class Usuario {
+/*if ($_SESSION){     
+        if ($_SESSION["perfil"]=="admin"){                
+        }else{
+            header("location:../index.php"); 
+        }                            
+    }else{
+        header("location:../index.php");
+    }*/
+class Horario {
 
-private $id_usuario;
-private $nombre ;
-private $password;
-private $perfil;
+private $id_horario;
+private $actividad_id_actividad;
+
 
 
 public function __construct(){
    
-
 }
-public function setId($id_usuario){
-     $this->id_usuario=$id_usuario;
+public function setId($id_horario){
+     $this->id_horario=$id_horario;
 }
 public function getId(){
-	return $this-->id_usuario;
+	return $this->id_horario;
 }
-public function setNombre($var){
-     $this->nombre=$var;
+public function setIdActividad($var){
+     $this->actividad_id_actividad=$var;
 }
-public function getNombre(){
-	return $this->nombre;
+public function getIdActividad(){
+	return $this->actividad_id_actividad;
 }
-public function setPassword($var){
-     $this->password=$var;
-}
-public function getPassword(){
-	return $this->password;
-}
-public function setPerfil($var){
-     $this->perfil=$var;
-}
-public function getPerfil(){
-	return $this->perfil;
-}
+
 
 }
 

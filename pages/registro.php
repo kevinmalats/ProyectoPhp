@@ -18,6 +18,11 @@ session_start();
 	<link href="../color/default.css" rel="stylesheet">
 
 	<link rel="shortcut icon" href="../img/icono.gif">
+
+	<!-- links bootstrap para subida de archivos¡-->
+<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+
+ 
 	
 </head>
 <body>
@@ -38,29 +43,48 @@ session_start();
 							<li><a title="Guarderías" href="guarderias.php">Guarderías</a></li>
 							<li><a title="Blog" href="blog.php">Blog</a></li>
 							<li><a title="Contactenos" href="contactenos.php">Contáctenos</a></li>
-						<?php
+						</ul>
+                      	<ul id="menu-main" class="nav navbar-nav navbar-right">	
+                       <?php
 						
-									
+							
 						if ($_SESSION){
+                         $fotoperfil=$_SESSION['fotoperfil'];
+                       
 						?>
-						<li><a title ="Logout" href="logout.php">Logout</a></li>
-						     <?php
+						<li class="dropdown">
+						<a href="#" class="dropdown-toggle midrop" data-toggle="dropdown">
+                          <img alt="" class="loat-left imagenPerfil" src="../<?php echo  $fotoperfil;?>">
+                            <span class="dropdown-caret"></span> <b class="caret"></b>
+                         </a>
+						
+						<ul class="dropdown-menu mistyle">
+						
+						<li class="dropdown-header"><a href="#">
+                         Logeado como <br><strong class=""><?php echo $_SESSION['nombre'];?></strong>
+                          </a></li>
+                          <li><a title ="Logout" href="logout.php">Logout</a></li>
+						
+						
+                         <?php
 							if ( $_SESSION["perfil"]=="admin"){
 								?>
-                          <li><a title="Administrar" href="../admin/index.php"><strong>Bienvenido:  </strong> <?php echo $_SESSION['nombre'];?></a></li>
+							
+                          <li><a title="Administrar" href="../admin/index.php">Administrar</a></li>
 						    <?php
-					    }else{
-					    	?>
-					    	 <li class="noHover"><a title="Bienvenido" ><strong>Bienvenido:  </strong> <?php echo $_SESSION['nombre'];?></a></li>
-					    	<?php
 					    }
-						}else{
+					 }else{
 						?>
-						<li><a title ="Login" href="login.php">Login</a></li>
-					<?php
-                     }
-					?>
+						<li><a title ="Login" href="login.php">Login</a></li> 
 
+						<?php
+					}
+					?>
+                    </ul>
+                   
+           
+
+                    </li>
 
 						</ul>
 					</nav>
@@ -69,7 +93,8 @@ session_start();
 		</div>
 	</div>
 	<!-- multistep form -->
-<form id="msform" action="../src/util/registrarUsuario.php" method="post">
+<div>
+<form id="msform" action="../src/util/registrarUsuario.php" method="post" enctype="multipart/form-data">
   <!-- progressbar -->
     
   <!-- fieldsets -->
@@ -89,39 +114,38 @@ session_start();
      <input type="text" name="correo" placeholder="Correo" />
     <input type="text" name="nombres" placeholder="Nombres" />
     <input type="text" name="apellidos" placeholder="Apellidos" />
+   
+      <div class="col-xs-10">
+       <input type="file" name="archivo" class="mifile" >
+             <!--<input name = "fotoperfil" type="text" id= "fotoperfil" class="form-control misopciones"
+ placeholder="Fotoperfil"  required/> -->
+      
+      </div>
+         
+
     <input type="text" name="telefono" placeholder="Telefono" />
     <textarea name="direccion" placeholder="Dirección"></textarea>
     <input type="submit" name="submit" class="submit action-button" value="Enviar" />
   </fieldset>
-</form>
-    
-	<?php
+  <?php
 	if($_GET["mensaje"]){
 		if($_GET["mensaje"]== "No deje campos vacios"){
-			$color="rojo";
+			
 		}else{
-			$color= "verde";
+			
 		}
 		?>
-		<div class="col-md-5 text-center"><p <?php echo "class='$color'"?>><?php echo $_GET["mensaje"];?></p></div>
+ <div class="col-md-5 text-center mensaje"><p><?php echo $_GET["mensaje"];?></p></div>
 		<?php
 	}
 
 ?>
+</form>
+
+    </div>
+	
    
 	<a href="#" class="scrollup"><i class="icon-angle-up icon-square icon-bgdark icon-2x"></i></a>
-	<script src="../js/jquery.js"></script>
-	<script src="../js/jquery.scrollTo.js"></script>
-	<script src="../js/jquery.nav.js"></script>
-	<script src="../js/jquery.localScroll.js"></script>
-	<script src="../js/bootstrap.js"></script>
-	<script src="../js/jquery.prettyPhoto.js"></script>
-	<script src="../js/isotope.js"></script>
-	<script src="../js/jquery.flexslider.js"></script>
-	<script src="../js/inview.js"></script>
-	<script src="../js/animate.js"></script>
-	<script src="../js/custom.js"></script>
-	<script src="../contactform/contactform.js"></script>
     </body>
      <footer>
 		<div class="container">
@@ -132,7 +156,7 @@ session_start();
 						<li><a href="http://www.twitter.com"><i class="icon-circled icon-bgdark icon-twitter icon-2x"></i></a></li>
 					</ul>
                    <p class="copyright"></p>
-						&copy; Safe DayCare. Todos los Derechos Reservados.
+					  Safe DayCare. Todos los Derechos Reservados.
 					<p></p>	
                     <div class="credits">
 							<p>Monitoreo y Seguridad  </p> 

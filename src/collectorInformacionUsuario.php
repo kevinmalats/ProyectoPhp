@@ -1,5 +1,12 @@
 <?php
-
+/*if ($_SESSION){     
+        if ($_SESSION["perfil"]=="admin"){                
+        }else{
+            header("location:../index.php"); 
+        }                            
+    }else{
+        header("location:../index.php");
+    }*/
 include_once('inforusuario.php');
 include_once('database/collector.php');
 

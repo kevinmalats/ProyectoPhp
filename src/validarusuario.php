@@ -1,4 +1,5 @@
 <?php
+
 	session_start();
   //require_once("usuario.php");
   require_once("collectorUsuario.php");
@@ -12,7 +13,14 @@
    if($usuario->getNombre() and $usuario->getPassword()){
     $_SESSION["perfil"]=$usuario->getPerfil();
     $_SESSION["nombre"]=$usuario->getNombre();
-   	header("location:../index.php");
+    $fotoperfil=$objColector->retornaFoto($usuario->getId());
+    /*if($fotoperfil==""){
+      $fotoperfil="img/perfil/anonimo.jpg";
+    }*/
+
+    $_SESSION["fotoperfil"]=$fotoperfil;
+   
+   header("location:../index.php");
 
    }else{
      $mensaje="login incorrecto";

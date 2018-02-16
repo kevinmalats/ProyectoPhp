@@ -1,5 +1,12 @@
 <?php
-
+/*if ($_SESSION){     
+        if ($_SESSION["perfil"]=="admin"){                
+        }else{
+            header("location:../index.php"); 
+        }                            
+    }else{
+        header("location:../index.php");
+    }*/
 include_once('telefono.php');
 include_once('database/collector.php');
 
@@ -13,19 +20,33 @@ class TelefonoCollector extends Collector
       $aux = new Telefono();
       $aux->setId($c{'id_telefono'});
       $aux->setDescripcion($c{'descripcion'});
-      $aux->setDescripcion($c{'informacion_usuario_id_usuario'});
+      $aux->setInfoUsua($c{'informacion_usuario_id_usuario'});
       array_push($arrayTelefono, $aux);
     }
     return $arrayTelefono;        
   }
+    
+function telefonoxusuario($id){
+   include_once('inforusuario.php');
+   $sql="select i.id_usuario,i.nombres from telefono t join informacion_usuario i on informacion_usuario_id_usuario=id_usuario where id_telefono=?";
+   $rows = self::$db->getRows($sql, array("{$id}"));
+foreach ($rows as $c){
+   $aux= new Informacion_usuario();
+   $aux->setId($c{'id_usuario'});
+   $aux->setNombres($c{'nombres'}); 
+    
+    }
+   return $aux; 
+}
+  
   
 
 function showTelefono($id) {
     $rows = self::$db->getRows("SELECT * FROM telefono where id_telefono= ? ", array ("{$id}"));        
 $aux = new Telefono();
-$aux->setId($c{'id_telefono'});
-$aux->setDescripcion($c{'descripcion'});
-$aux->setDescripcion($c{'informacion_usuario_id_usuario'});
+$aux->setId($rows[0]{'id_telefono'});
+$aux->setDescripcion($rows[0]{'descripcion'});
+$aux->setInfoUsua($rows[0]{'informacion_usuario_id_usuario'});
     return $aux;        
   }
 

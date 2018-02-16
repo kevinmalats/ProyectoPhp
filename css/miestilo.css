@@ -133,3 +133,9 @@ body {
     .selectregistro{
     	 width: 100%;
     }
+ .mifile {
+    width: 300px;
+    height: 40px;
+    margin-left: 40px;
+    background-color: #2e6da4;
+  }

@@ -32,7 +32,7 @@ require_once("../../src/collectorUsuario.php");
     echo "<div class='container-fluid'>";
     echo "<div class='navbar-header'><a class='navbar-brand' >Tabla Usuario</a></div>";
     echo " <ul class='nav navbar-nav'>";
-		      	echo "<li><a href='../index.php'>Menú</a></li>";
+		      	echo "<li><a href='../index.php'>Atrás</a></li>";
 			    echo "<li><a href='crear.php'>Nuevo</a></li>";
 		echo "</ul>";
     echo " <ul class='nav navbar-nav navbar-right'>";
@@ -51,6 +51,7 @@ require_once("../../src/collectorUsuario.php");
 		echo "     <th>Usuario</th>"; 
 		echo " 	   <th>Contraseña</th>"; 
 		echo "     <th>Tipo de Usuario</th>";  
+		echo "     <th>Ciudad</th>"; 
 		echo "</tr>"; 
 		echo "</thead>"; 
 
@@ -62,6 +63,8 @@ echo "<td>".$usuarios->getId()."</td>";
 echo "<td>".$usuarios->getNombre()."</td>";
 echo "<td>".$usuarios->getPassword()."</td>"; 
 echo "<td>".$usuarios->getPerfil()."</td>";
+echo "<td>".$objCollector->ciudadUsuario($usuarios->getId())->getNombre()."</td>";
+
 
     echo "<td><a href='editar.php?id=".$usuarios->getId()."'>Editar</a></td>"; 
 	echo "<td><a href='eliminar.php?id=".$usuarios->getId()."'>Eliminar</a></td>"; 

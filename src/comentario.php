@@ -1,12 +1,18 @@
 <?php
-/**
-* 
-*/
+/*if ($_SESSION){     
+        if ($_SESSION["perfil"]=="admin"){                
+        }else{
+            header("location:../index.php"); 
+        }                            
+    }else{
+        header("location:../index.php");
+    }*/
 class Comentario {
 
 private $id_comentario;
 private $descripcion ;
 private $informacion_usuario_id_usuario;
+private $guarderia_id_guarderia;
 
 
 
@@ -32,7 +38,12 @@ public function setUsuario($var){
 public function getUsuario(){
 	return $this->informacion_usuario_id_usuario;
 }
-
+public function setGuarderia($var){
+     $this->guarderia_id_guarderia=$var;
+}
+public function getGuarderia(){
+    return $this->guarderia_id_guarderia;
+}
 }
 
 ?>

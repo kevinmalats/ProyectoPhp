@@ -38,33 +38,50 @@ session_start();
 							<li><a title="Guarderias" href="guarderias.php">Guarderías</a></li>
 							<li><a title="blog" href="blog.php">Blog</a></li>
 							<li><a title="contactenos" href="contactenos.php">Contáctenos</a></li>
-						<?php
+					</ul>
+                      	<ul id="menu-main" class="nav navbar-nav navbar-right">	
+                       <?php
 						
-									
+							
 						if ($_SESSION){
+                         $fotoperfil=$_SESSION['fotoperfil'];
+                       
 						?>
-						<li><a title ="Logout" href="logout.php">Logout</a></li>
-						     <?php
+						<li class="dropdown">
+						<a href="#" class="dropdown-toggle midrop" data-toggle="dropdown">
+                          <img alt="" class="loat-left imagenPerfil" src="../<?php echo  $fotoperfil;?>">
+                            <span class="dropdown-caret"></span> <b class="caret"></b>
+                         </a>
+						
+						<ul class="dropdown-menu mistyle">
+						
+						<li class="dropdown-header"><a href="#">
+                         Logeado como <br><strong class=""><?php echo $_SESSION['nombre'];?></strong>
+                          </a></li>
+                          <li><a title ="Logout" href="logout.php">Logout</a></li>
+						
+						
+                         <?php
 							if ( $_SESSION["perfil"]=="admin"){
 								?>
-                          <li><a title="Administrar" href="../admin/index.php"><strong>Bienvenido:  </strong> <?php echo $_SESSION['nombre'];?></a></li>
+							
+                          <li><a title="Administrar" href="../admin/index.php">Administrar</a></li>
 						    <?php
-					    }else{
-					    	?>
-					    	 <li class="noHover"><a title="Bienvenido" ><strong>Bienvenido:  </strong> <?php echo $_SESSION['nombre'];?></a></li>
-					    	<?php
 					    }
-						}else{
+					 }else{
 						?>
-						<li><a title ="Login" href="login.php">Login</a></li>
-					<?php
+						<li><a title ="Login" href="login.php">Login</a></li> 
+
+						<?php
 					}
 					?>
+                    </ul>
+                   
+           
 
+                    </li>
 
-
-						</ul>
-					</nav>
+						</ul>					</nav>
         </div>
       </div>
     </div>

@@ -9,12 +9,12 @@ require_once("../../src/collectorInformacionUsuario.php");
 <html lang="es">
 	<head>
 		<meta charset ="utf-8">
-		<title> Tabla Usuario </title>
+		<title>Tabla Información de Usuarios </title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-   <link href="../../css/tablas.css" rel="stylesheet" >
+   <link href="../assets/css/miestilo.css" rel="stylesheet" >
 	</head>
 <body>
 <header>
@@ -30,19 +30,19 @@ require_once("../../src/collectorInformacionUsuario.php");
 
  echo "<nav class='navbar navbar-default'>";
     echo "<div class='container-fluid'>";
-    echo "<div class='navbar-header'><a class='navbar-brand' >Tabla Usuario</a></div>";
+    echo "<div class='navbar-header'><a class='navbar-brand' >Tabla Informació  de Usuario</a></div>";
     echo " <ul class='nav navbar-nav'>";
-		      	echo "<li><a href='../index.php'>Menú</a></li>";
+		      	echo "<li><a href='../index.php'>Atrás</a></li>";
 			    echo "<li><a href='crear.php'>Nuevo</a></li>";
 		echo "</ul>";
-    echo " <ul class='nav navbar-nav navbar-right'>";
+    echo " <ul class='nav navbar-nav navbar-right minav'>";
     echo "<li><a href='#'>Hola Usuario : (" . $_SESSION ['nombre'] . ")</a></li>";
     echo "<li><a href='../../pages/logout.php''><span class='glyphicon glyphicon-log-in'></span> Salir</a></li>";
     echo "</ul>";
     echo "</div>";
     echo "</nav>";
     echo "<div class='container'>";
-    echo "<h2>Informacion Usuario</h2>";
+    echo "<h2>Datos de Usuarios Registrados</h2>";
     echo "<div class='table-responsive'>"; 
 		  echo "<table class='table'>"; 
 		   echo "<thead>"; 
@@ -69,8 +69,11 @@ echo "<td>".$usuarios->getId()."</td>";
 echo "<td>".$usuarios->getNombres()."</td>";
 echo "<td>".$usuarios->getApellidos()."</td>"; 
 echo "<td>".$usuarios->getCorreo()."</td>";
-echo "<td>".$usuarios->getFotoPerfil()."</td>";
+
+echo "<td > <img class='imagenes' src='../../".$usuarios->getFotoPerfil()."'</></td>";
+
 echo "<td>".$objCollector->usXUsuario($usuarios->getId())->getNombre()."</td>";
+
 echo "<td><select name=telefonos´ required  class=form-control miselect´>";
         foreach ($objCollector->telefonoXUsuario($usuarios->getId()) as $telefono) {
             ?>

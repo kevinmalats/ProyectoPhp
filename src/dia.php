@@ -1,24 +1,30 @@
 <?php
-/**
-* 
-*/
-class Usuario {
+/*if ($_SESSION){     
+        if ($_SESSION["perfil"]=="admin"){                
+        }else{
+            header("location:../index.php"); 
+        }                            
+    }else{
+        header("location:../index.php");
+    }*/
+class Dia {
 
-private $id_usuario;
+private $id_dia;
 private $nombre ;
-private $password;
-private $perfil;
+private $hora_inicio;
+private $hora_fin;
+private $horario_id_horario;    
 
 
 public function __construct(){
    
 
 }
-public function setId($id_usuario){
-     $this->id_usuario=$id_usuario;
+public function setId($id_dia){
+     $this->id_dia=$id_dia;
 }
 public function getId(){
-	return $this-->id_usuario;
+	return $this->id_dia;
 }
 public function setNombre($var){
      $this->nombre=$var;
@@ -26,19 +32,24 @@ public function setNombre($var){
 public function getNombre(){
 	return $this->nombre;
 }
-public function setPassword($var){
-     $this->password=$var;
+public function setHoraInicio($var){
+     $this->hora_inicio=$var;
 }
-public function getPassword(){
-	return $this->password;
+public function getHoraInicio(){
+	return $this->hora_inicio;
 }
-public function setPerfil($var){
-     $this->perfil=$var;
+public function setHoraFin($var){
+     $this->hora_fin=$var;
 }
-public function getPerfil(){
-	return $this->perfil;
+public function getHoraFin(){
+	return $this->hora_fin;
 }
-
+public function setHorarioIdHorario($var){
+     $this->horario_id_horario=$var;
 }
-
+public function getHorarioIdHorario(){
+	return $this->horario_id_horario;  
+}
+    
+}
 ?>

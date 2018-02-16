@@ -3,8 +3,22 @@
         margin-left: 40px;
         display: inline-block;
     }
+      .mifile {
+    width: 300px;
+    height: 40px;
+    margin-left: 40px;
+    background-color: #2e6da4;
+  }
     .misopciones {
     	width: 20%;
     	margin-left: 40px;
     }
-  
+  .imagenes {
+  	width: 30%;
+  	height: 10%;
+  }
+    .imagenesEdit {
+    margin-left: 40px;
+    width: 10%;
+    height: 5%;
+  }
