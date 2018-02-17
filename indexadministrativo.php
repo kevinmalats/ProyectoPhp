@@ -160,9 +160,9 @@ session_start();
                             echo "</div>";
                           echo "</div>";
                         echo "</div>";
-=======
+
                       echo "<td>". "<a href='eliminarUsuarioPA.php?mensaje=$valor'><button class='material-icons button2 delete'>delete</button></a>" . "</td>";
->>>>>>> 4dbbf30fda4428c3ff2e976c5ce7d4bc88ea8cb4
+                      
                   }
                 ?>
               </tbody>
