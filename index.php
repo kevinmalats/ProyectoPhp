@@ -1,174 +1,206 @@
 <?php
 session_start();
 ?>
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="utf-8">
-	<title>Safe DayCare</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="">
-	<meta name="php" content="proyecto_pws">
-	<link href="css/bootstrap-responsive.css" rel="stylesheet">  
-	<!---estilo de colores -->
-    <link href="css/style.css" rel="stylesheet">
-    <!-- efectos -->
-	<link href="color/default.css" rel="stylesheet">
-	<link rel="shortcut icon" href="img/icono.gif">
-	
-</head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Camaron Latino</title>
+    <!-- core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/animate.min.css" rel="stylesheet">
+    <link href="css/prettyPhoto.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
 
-<body>
-	<!-- navbar -->
-	<div class="navbar-wrapper">
-		<div class="navbar navbar-inverse navbar-fixed-top">
-			
-            <div class="navbar-inner">
-				<div class="container">
-					<!-- Responsive navbar -->
-					<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-				</a>
-					<h1 class="brand"><a href="index.php">Safe DayCare</a></h1>
+<body class="homepage">
 
-					<!-- navigation -->
-					<nav class="pull-right nav-collapse collapse navbar-left">
+    <header id="header">
 
-						<ul id="menu-main" class="nav navbar">
-							<li><a title="Quienes Somos" href="pages/quienes_somos.php">Acerca de</a></li>
-							<li><a title="servicios" href="pages/Servicios.php">Servicios</a></li>
-							<li><a title="Guarderías" href="pages/guarderias.php">Guarderías</a></li>
-							<li><a title="blog" href="pages/blog.php">Blog</a></li>
-							<li><a title="contactenos" href="pages/contactenos.php">Contáctenos</a></li>
-						</ul>
-						<ul id="menu-second" class="nav navbar-nav navbar-right">	
-                       <?php
-						
-							
-						if ($_SESSION){
-                         $fotoperfil=$_SESSION['fotoperfil'];
-                       
-						?>
-						<li class="dropdown navbar-toggle">
-						<a href="#" class="dropdown-toggle midrop navbar-toggle" data-toggle="dropdown">
-                          <img  alt="" class="imagenPerfil" src="<?php echo  $fotoperfil;?>">
-                            <span class="dropdown-caret"></span> <b class="caret mib"></b>
-                         </a>
-						
-						<ul class="dropdown-menu mistyle">
-						
-						<li class="dropdown-header"><a href="#">
-                         Logeado como <br><strong class=""><?php echo $_SESSION['nombre'];?></strong>
-                          </a></li>
-                          <li ><a class="dropdown-item" title ="Logout" href="pages/logout.php">Logout</a></li>
-						
-						
-                         <?php
-							if ( $_SESSION["perfil"]=="admin"){
-								?>
-							
-                          <li class="dropdown-item"><a title="Administrar" href="admin/index.php">Administrar</a></li>
-						    <?php
-					    }
-					 }else{
-						?>
-						<li><a title ="Login" href="pages/login.php">Login</a></li> 
+        <nav class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Navegación</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.php"><img src="images/logo.png" alt="logo"></a>
+                </div>
+				
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="index.php">Inicio</a></li>
+                        <li><a href="about-us.php">Nosotros</a></li>
+                        <li><a href="servicios.php">Servicios</a></li>
+                        <li><a href="productos.php">Productos</a></li> 
 
-						<?php
-					}
-					?>
+                          <!--<li><a href="login.html">Login</a></li>-->
+                        <?php
+                            if ($_SESSION){
+                        ?>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Publicacion <i class="fa fa-angle-down"></i></a>
+                                <ul class="dropdown-menu">                                
+                                    <li><a href="blog.php">Ver</a></li>
+                                    <li><a href="publicacionUsuario.php?mensaje=">Crear</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="contact-us.php">Contáctenos</a></li>
+                           
+                        <?php
+                                if ($_SESSION["perfil"]=="admin"){
+                        ?>
+                            <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bienvenido <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">                                
+                                <li><a href="indexadministrativo.php"><strong> <?php echo $_SESSION["usu"];?> </strong> </a></li>
+                                <li><a href="logout.php">Cerrar Sesión</a></li>
+                            </ul>
+                            </li>
+                        <?php
+                                }else{
+                        ?>                            
+                            
+                            <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Bienvenido <i class="fa fa-angle-down"></i></a>
+                            <ul class="dropdown-menu">                                
+                                <li><a title="Bienvenido" ><strong>Bienvenido:  </strong> <?php echo $_SESSION["usu"];?></a></li>
+                                <li><a href="logout.php">Cerrar Sesión</a></li>
+                            </ul>
+                            </li>
+                        <?php
+                                }
+                            }else{
+                        ?>
+                            <li><a href="blog.php">Publicacion</a></li>
+                            <li><a href="login.php?mensaje=">Inicio de Sesión</a></li>
+                             
+                        <?php
+                            }
+                        ?>                                               
+                        
                     </ul>
-                   
-           
-
-                    </li>
-
-						</ul>
-					</nav>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- Header area -->
-	<div id="header-wrapper" class="header-slider">
-		<header class="clearfix">
-			<div class="logo">
-				<img src="img/logo_babycare.gif" alt="logotipo" />
-			</div>
-			<div class="container">
-				<div class="row">
-					<div class="span12">
-						<div id="main-flexslider" class="flexslider">
-							<ul class="slides">
-								<li>
-									<p class="home-slide-content">
-										<strong>cuidado</strong> y seguridad
-									</p>
-								</li>
-								<li>
-									<p class="home-slide-content">
-										de tu bebe <strong></strong>
-									</p>
-								</li>
-								<li>
-									<p class="home-slide-content">
-										Garantizamos <strong>su bienestar</strong>
-									</p>
-								</li>
-							</ul>
-						</div>
-						<!-- end slider -->
-					</div>
-				</div>
-			</div>
-		</header>
-	</div>
-	
-	<section class="spacer bg3">
-	<h2>In</h2>
-		<div class="container">
-			<div class="row">
-				<div class="span12 aligncenter flyLeft">
-					<blockquote class="large">
-                        Somos una empresa estabecida en la Ciudad de Guayaquil, con 3 años de experiencia en tecnología de monitoreo y streaming, somos tu mejor opción.
-					</blockquote>
-				</div>
-				<div class="span12 aligncenter flyRight">
-					<i class="icon-rocket icon-10x"></i>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- end spacer section -->
-	
-	<!-- section: contact -->
-	<script src="js/jquery.js"></script>
-	<script src="js/jquery.scrollTo.js"></script>
-	<script src="js/jquery.nav.js"></script>
-	
-	<script src="js/bootstrap.js"></script>
-</body>	
-
-<footer>
-		<div class="container">
-			<div class="row">
-				<div class="span6 offset3">
-					<ul class="social-networks">
-						<li><a href="http://www.instagram.com"><i class="icon-circled icon-bgdark icon-instagram icon-2x"></i></a></li>
-						<li><a href="http://www.twitter.com"><i class="icon-circled icon-bgdark icon-twitter icon-2x"></i></a></li>
-					</ul>
-                    <p class="copyright"></p>
-						&copy; Safe DayCare. Todos los Derechos Reservados.
-					<p></p>	
-                    <div class="credits">
-							<p>Monitoreo y Seguridad  </p> 
-				    </div>
-				</div>
-			</div>
-        </div>
+                </div>
+            </div><!--/.container-->
+        </nav><!--/nav-->
 		
-</footer>
+    </header><!--/header-->
 
+    <section id="main-slider" class="no-margin">
+        <div class="carousel slide">
+            <ol class="carousel-indicators">
+                <li data-target="#main-slider" data-slide-to="0" class="active"></li>
+                <li data-target="#main-slider" data-slide-to="1"></li>
+                <li data-target="#main-slider" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
 
+                <div class="item active" style="background-image: url(images/slider/intro.jpeg)">
+                    <div class="container">
+                        <div class="row slide-margin">
+                            <div class="col-sm-6">
+                                <div class="carousel-content">
+                                    <h1 class="animation animated-item-1">Crece y Únete Ya!!!</h1>
+                                    <h2 class="animation animated-item-2">En nuestra comunidad con tu ayuda juntos mejoraremos el sector camaronero.  </h2>
+                                    <h2 class="animation animated-item-3">No lo pienses más te estamos esperando. </h2>                                                        
+                                </div>
+                            </div>
 
+           
+                        </div>
+                    </div>
+                </div><!--/.item-->
+
+                <div class="item" style="background-image: url(images/slider/bg2.jpg)">
+                    <div class="container">
+                        <div class="row slide-margin">
+                            <div class="col-sm-6">
+                                <div class="carousel-content">
+                                    <h1 class="animation animated-item-1">Aquí encontrarás los mejores productos y servicios.</h1>
+                                    <h2 class="animation animated-item-2">De la mano de mejores porfesionales del país.</h2>
+                                    </div>
+                            </div>
+
+                            <div class="col-sm-6 hidden-xs animation animated-item-4">
+                                <div class="slider-img">
+                                   
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/.item-->
+
+                <div class="item" style="background-image: url(images/slider/bg3.jpg)">
+                    <div class="container">
+                        <div class="row slide-margin">
+                            <div class="col-sm-6">
+                                <div class="carousel-content">
+                                    <h1 class="animation animated-item-1">Con excelentes resultados.</h1>
+                                    <h2 class="animation animated-item-2">En todos los campos de acción.</h2>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-sm-6 hidden-xs animation animated-item-4">
+                                <div class="slider-img">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/.item-->
+            </div><!--/.carousel-inner-->
+        </div><!--/.carousel-->
+        <a class="prev hidden-xs" href="#main-slider" data-slide="prev">
+            <i class="fa fa-chevron-left"></i>
+        </a>
+        <a class="next hidden-xs" href="#main-slider" data-slide="next">
+            <i class="fa fa-chevron-right"></i>
+        </a>
+    </section><!--/#main-slider-->
+
+    
+      <footer id="footer" class="midnight-blue">
+            <div class="container">
+                <div class="row">
+                      <div class="col-sm-6">
+                    &copy; 2018 <a target="_blank" href="http://shapebootstrap.net/" title="Free Twitter Bootstrap WordPress Themes and HTML templates">Camarón Latino</a>. Todos los Derechos Reservados.
+                </div>
+                   
+                    <div class="col-sm-6 col-xs-8">
+                       <div class="social">
+                            <ul class="social-share">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li> 
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                            </ul>
+                       </div>
+                    </div>
+                </div>
+            </div><!--/.container-->
+    </footer><!--/#footer-->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/jquery.isotope.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/wow.min.js"></script>
+</body>
 </html>
