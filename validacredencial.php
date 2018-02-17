@@ -18,7 +18,8 @@
         if($comprobar == "si"){
             $mensaje="Todavia no hay un usuario asignado a esta credencial";
             session_destroy();
-            header("location:login.php?mensaje=$mensaje"); 
+           
+             echo "<meta http-equiv='refresh' content='0;URL= login.php?mensaje=$mensaje'>";
         }else{
             $objColector2= new usuarioCollector();                         
             $usuario = $objColector2->comprobarUsuarioxIdCredencial($credencial->getIdCredencial());
@@ -33,7 +34,8 @@
                 $_SESSION["usu"]=$usuario->getNombre();
                 $_SESSION["id"]=$usuario->getIdUsuario();
                 $_SESSION["idr"]=$usuario->getIdRol();
-                header("location:index.php");
+               
+                 echo "<meta http-equiv='refresh' content='0;URL= index.php'>";
             }
    
         }       
@@ -41,7 +43,8 @@
          /*$mensaje="login incorrecto";-->
          header("location:../pages/login.php?mensaje=$mensaje");*/
         $mensaje="login incorrecto";
-        header("location:login.php?mensaje=$mensaje"); 
+        
+         echo "<meta http-equiv='refresh' content='0;URL= login.php?mensaje=$mensaje'>";
     }
 //
 ?>
